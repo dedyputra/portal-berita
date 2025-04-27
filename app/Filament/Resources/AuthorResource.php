@@ -41,7 +41,11 @@ class AuthorResource extends Resource
         // menampilkan data yang ditampilkan 
         return $table
             ->columns([
-                //
+                Tables\Columns\ImageColumn::make('avatar')->circular(),
+                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('username'),
+                Tables\Columns\TextColumn::make('bio'),
+
             ])
 
             // Filters misal dimodel (author dan category)
@@ -51,9 +55,10 @@ class AuthorResource extends Resource
 
             // untuk membuat CRUD 
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
 
-                // 
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
