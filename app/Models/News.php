@@ -8,7 +8,7 @@ class News extends Model
 {
     protected $fillable = [
         'author_id',
-        'new_category_id',
+        'news_category_id',
         'title',
         'slug',
         'thumbnail',
@@ -20,7 +20,7 @@ class News extends Model
         return $this->belongsTo(Author::class);
     }
 
-    public function newCategory()
+    public function newsCategory()
     {
         return $this->belongsTo(NewsCategory::class);
     }
