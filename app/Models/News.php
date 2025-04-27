@@ -22,7 +22,7 @@ class News extends Model
 
     public function newCategory()
     {
-        return $this->belongsTo(NewCategory::class);
+        return $this->belongsTo(NewsCategory::class);
     }
 
     public function banner()
